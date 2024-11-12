@@ -19,7 +19,6 @@ document.getElementById('requestForm').addEventListener('submit', function(event
     references: document.getElementById('references').value
   };
 
-  // Create card description
   var description = `
 Requester: ${formData.requester}
 
@@ -45,8 +44,7 @@ References:
 ${formData.references}
   `;
 
-  // Create a card in Trello
-  return t.board('id', 'name')
+  t.board('id', 'name')
     .then(function(board) {
       return t.list('id', 'name')
         .then(function(list) {
@@ -56,12 +54,31 @@ ${formData.references}
                 name: `${formData.requester} - ${formData.description.substring(0, 50)}...`,
                 desc: description,
                 due: new Date(formData.dueDate).toISOString(),
-                idList: list.id
+                idList: list.id,
+                pos: 'top'
               });
             });
         });
     })
     .then(function() {
       t.closeModal();
+      t.alert({
+        message: 'Creative request submitted successfully!',
+        duration: 5
+      });
+    })
+    .catch(function(error) {
+      console.error('Error creating card:', error);
+      t.alert({
+        message: 'There was an error submitting your request. Please try again.',
+        duration: 5,
+        display: 'error'
+      });
     });
+});
+
+// Add form validation
+document.getElementById('requestForm').addEventListener('input', function(event) {
+  var submitButton = document.querySelector('button[type="submit"]');
+  submitButton.disabled = !this.checkValidity();
 });
