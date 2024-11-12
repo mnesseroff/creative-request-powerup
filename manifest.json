@@ -1,19 +1,21 @@
 {
   "name": "Creative Request Form",
-  "details": "A form for submitting creative requests",
+  "details": "Streamline creative requests with a standardized form",
   "icon": {
     "dark": "./images/icon-light.png",
     "light": "./images/icon-dark.png"
   },
-  "author": "Your Name",
+  "author": "Your Company Name",
   "capabilities": [
     "card-buttons",
     "authorization-status",
-    "show-authorization"
+    "show-authorization",
+    "board-buttons"
   ],
   "connectors": {
     "iframe": {
       "url": "./form.html"
     }
-  }
+  },
+  "version": "1.0.0"
 }
