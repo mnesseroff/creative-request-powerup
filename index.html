@@ -3,10 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title>Creative Request Power-Up</title>
-    <script src="https://p.trellocdn.com/power-up.min.js"></script>
-    <script src="./js/power-up.js"></script>
+    <script>
+      // Add this to check if basic JavaScript is running
+      console.log('Page is loading...');
+    </script>
+    <script src="https://p.trellocdn.com/power-up.min.js" onload="console.log('Trello script loaded')" onerror="console.log('Error loading Trello script')"></script>
+    <script src="./js/power-up.js" onload="console.log('Power-up script loaded')" onerror="console.log('Error loading power-up script')"></script>
   </head>
   <body>
     <h1>Creative Request Power-Up</h1>
+    <div id="status">Checking scripts...</div>
+    <script>
+      // Add this to show visible status on the page
+      document.getElementById('status').textContent = 'Scripts should be loaded';
+    </script>
   </body>
 </html>
