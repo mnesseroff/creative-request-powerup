@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Creative Request Form</title>
+    <link rel="stylesheet" href="https://p.trellocdn.com/power-up.css">
+    <script src="https://p.trellocdn.com/power-up.min.js"></script>
+    <style>
+      .form-container {
+        padding: 1rem;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      .form-group {
+        margin-bottom: 1rem;
+      }
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+      input, textarea {
+        width: 100%;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+      }
+      .checkbox-group {
+        margin-bottom: 1rem;
+      }
+      button {
+        background: #0079BF;
+        color: white;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #026AA7;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <form id="requestForm">
+        <div class="form-group">
+          <label for="requester">Who should we thank for this request?</label>
+          <input type="text" id="requester" required>
+        </div>
+
+        <div class="form-group">
+          <label for="description">What's the magic you need us to create?</label>
+          <textarea id="description" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="dueDate">When does this need to be ready to shine?</label>
+          <input type="date" id="dueDate" required>
+        </div>
+
+        <div class="form-group">
+          <label>Video Specs</label>
+          <input type="text" id="videoLength" placeholder="Length (e.g., 30sec, 2min)" required>
+          
+          <div class="checkbox-group">
+            <label>Formats needed:</label>
+            <div>
+              <input type="checkbox" id="landscape"> <label for="landscape">16:9 Landscape</label>
+            </div>
+            <div>
+              <input type="checkbox" id="stories"> <label for="stories">9:16 Stories/Reels</label>
+            </div>
+            <div>
+              <input type="checkbox" id="square"> <label for="square">1:1 Square</label>
+            </div>
+            <div>
+              <input type="checkbox" id="portrait"> <label for="portrait">4:5 Portrait</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="assets">Got any links to assets we can work with?</label>
+          <textarea id="assets" placeholder="Footage, tracks, artworks, etc."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Any special words or message you want us to add?</label>
+          <textarea id="message" placeholder="Copy or text to include"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="references">Any visual inspiration or references?</label>
+          <textarea id="references" placeholder="Help us see your vision — share links or examples"></textarea>
+        </div>
+
+        <button type="submit">Submit Request</button>
+      </form>
+    </div>
+
+    <script src="./js/form.js"></script>
+  </body>
+</html>
