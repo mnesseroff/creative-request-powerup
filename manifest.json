@@ -1,0 +1,19 @@
+{
+  "name": "Creative Request Form",
+  "details": "A form for submitting creative requests",
+  "icon": {
+    "dark": "./images/icon-light.png",
+    "light": "./images/icon-dark.png"
+  },
+  "author": "Your Name",
+  "capabilities": [
+    "card-buttons",
+    "authorization-status",
+    "show-authorization"
+  ],
+  "connectors": {
+    "iframe": {
+      "url": "./form.html"
+    }
+  }
+}
